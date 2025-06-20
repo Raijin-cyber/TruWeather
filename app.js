@@ -52,7 +52,7 @@ function updateDateTime() {
 }
 
 async function find_weather() {
-    let URL = `${base_URL}${city_input.value}&days=2&aqi=no&alerts=yes&lang=en`;
+    let URL = `${base_URL}${city_input.value}&days=2&aqi=no&alerts=no`;
     let promise = await fetch(URL);
     let data = await promise.json();
     let code = data.current.condition.code;
@@ -90,28 +90,28 @@ async function find_weather() {
 
     // FORECASTING STARTS FROM HERE
 
-    for(let i = 0; i < 4; i++) {
-        if(temp_time + 2 > 24) {
-            temp_time = (temp_time + 2) - 24;
-        }
-        else {
-            temp_time += 2;
-        }
+    for (let i = 0; i < 4; i++) {
+        let hour = temp_time + (i + 1) * 2;
+        let dayIndex = Math.floor(hour / 24);
+        let hourIndex = hour % 24;
 
-        fore_time[i].innerText = `Time: ${temp_time}`;
-        fore_day[i].innerHTML = `${weatherImages[data.forecast.forecastday[1].hour[2].condition.code][2]}`;
-        fore_arrow[i].style.transform = `rotate(${data.forecast.forecastday[1].hour[temp_time].wind_degree}deg)`;
-        fore_speed[i].innerHTML = `${data.forecast.forecastday[1].hour[temp_time].wind_kph} kph <i class="fa-solid fa-gauge"></i>`;
-        fore_feel_temp[i].innerText = `Will feel like: ${data.forecast.forecastday[0].hour[temp_time].feelslike_c} °C`;
-        fore_humid[i].innerHTML = `Humidity <i class="fa-solid fa-droplet"></i>: ${data.forecast.forecastday[1].hour[temp_time].humidity}`;
-        fore_uv_index[i].innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-thermometer-half" viewBox="0 0 16 16">
-                                    <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415"/>
-                                    <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1"/>
-                                    </svg>UV: ${data.forecast.forecastday[1].hour[temp_time].uv}`;
-        fore_visibility[i].innerHTML = `${data.forecast.forecastday[1].hour[temp_time].vis_km} km <i class="fa-regular fa-eye"></i>`;
+        const forecast = data.forecast.forecastday[dayIndex].hour[hourIndex];
+
+        fore_time[i].innerText = `Time: ${hourIndex}`;
+        fore_day[i].innerHTML = `${weatherImages[forecast.condition.code][2]}`;
+        fore_arrow[i].style.transform = `rotate(${forecast.wind_degree}deg)`;
+        fore_speed[i].innerHTML = `${forecast.wind_kph} kph <i class="fa-solid fa-gauge"></i>`;
+        fore_feel_temp[i].innerText = `Will feel like: ${forecast.feelslike_c} °C`;
+        fore_humid[i].innerHTML = `Humidity <i class="fa-solid fa-droplet"></i>: ${forecast.humidity}`;
+        fore_uv_index[i].innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-thermometer-half" viewBox="0 0 16 16">
+                <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415"/>
+                <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1"/>
+            </svg>UV: ${forecast.uv}`;
+        fore_visibility[i].innerHTML = `${forecast.vis_km} km <i class="fa-regular fa-eye"></i>`;
     }
 
-    console.log(data);
+    // console.log(data);
 }
 
 city_input.addEventListener("keydown", (event) => {
