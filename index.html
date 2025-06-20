@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruWeather</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/bootstrap-icons.svg">
+</head>
+<body>
+    <header>
+        <div class="city_panel">
+            <input type="text" class="city_container" placeholder="City" value="Lucknow">
+            <div class="day_info">
+                <div class="humidity">94<i class="fa-solid fa-droplet"></i></div>
+                <div class="visibility">10 km<i class="fa-regular fa-eye"></i></div>            
+                <div class="dir_arrow"><i class="fa-solid fa-arrow-up"></i></div>
+            </div>
+        </div>
+        <div class="space_location">
+            <div class="day_date_time">-- -- --</div>
+            <div class="sun_condition">
+                <div class="sun_rise">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-sunrise-fill" viewBox="0 0 16 16">
+                        <path d="M7.646 1.146a.5.5 0 0 1 .708 0l1.5 1.5a.5.5 0 0 1-.708.708L8.5 2.707V4.5a.5.5 0 0 1-1 0V2.707l-.646.647a.5.5 0 1 1-.708-.708zM2.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707m11.314 0a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0M11.709 11.5a4 4 0 1 0-7.418 0H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10m13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                </div>
+                <div class="sun_set">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-sunset-fill" viewBox="0 0 16 16">
+                            <path d="M7.646 4.854a.5.5 0 0 0 .708 0l1.5-1.5a.5.5 0 0 0-.708-.708l-.646.647V1.5a.5.5 0 0 0-1 0v1.793l-.646-.647a.5.5 0 1 0-.708.708zm-5.303-.51a.5.5 0 0 1 .707 0l1.414 1.413a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .706l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM11.709 11.5a4 4 0 1 0-7.418 0H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10m13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="hero">
+        <div class="weather_panel1">
+             <div class="uv_index">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-thermometer-half" viewBox="0 0 16 16">
+                    <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415"/>
+                    <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1"/>
+                </svg>UV: 
+            </div>
+            <div class="feel_temp_container">
+                Feels like <div class="ftemp">--°C</div>
+            </div>
+        </div>
+        <div class="weather_panel2">
+                <div class="wind_speed">
+                    -- kmp <i class="fa-solid fa-gauge"></i>
+                </div>
+                <div class="day">
+                    -- <!-- <i class="fa-solid fa-wind"></i>   -->
+                </div>
+            </div>
+    </div>
+
+    
+    <footer>
+        <div class="forecast">
+            <div class="one box">
+                <div class="fore_content content">
+                    
+                    <div class="fore_time">
+                        Time: -- --
+                    </div>
+                 
+                    <div class="day_air_speed">
+                        <div class="fore_day">
+                            <i class="fa-solid fa-cloud-bolt"></i>
+                        </div>
+                        
+                        <div class="fore_arrow">
+                            <i class="fa-solid fa-arrow-up" id="a1"></i>
+                        </div>
+
+                        <div class="fore_speed">
+                            -- kph <i class="fa-solid fa-gauge"></i>
+                        </div>
+
+                    </div>
+                    
+                    <div class="fore_feel_temp">
+                        <div class="will_feel_like">Will feel like: --°C</div>
+                    </div>
+                    
+                    <div class="fore_humid">
+                        Humidity <i class="fa-solid fa-droplet"></i>: 
+                    </div>
+                    
+                    <div class="uv_vis">
+                        
+                        <div class="fore_uv_index">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-thermometer-half" viewBox="0 0 16 16">
+                                <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415"/>
+                                <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1"/>
+                            </svg>UV:
+                        </div>
+
+                        <div class="fore_visibility">
+                            -- km <i class="fa-regular fa-eye"></i>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="two box">
+                <div class="fore_content content">
+                    
+                    <div class="fore_time">
+                        Time: -- --
+                    </div>
+                 
+                    <div class="day_air_speed">
+                        <div class="fore_day">
+                            <i class="fa-solid fa-cloud-bolt"></i>
+                        </div>
+                        
+                        <div class="fore_arrow">
+                            <i class="fa-solid fa-arrow-up" id="a1"></i>
+                        </div>
+
+                        <div class="fore_speed">
+                            -- kmp <i class="fa-solid fa-gauge"></i>
+                        </div>
+
+                    </div>
+                    
+                    <div class="fore_feel_temp">
+                        <div class="will_feel_like">Will feel like: --°C</div>
+                    </div>
+                    
+                    <div class="fore_humid">
+                        Humidity <i class="fa-solid fa-droplet"></i>: 
+                    </div>
+                    
+                    <div class="uv_vis">
+                        
+                        <div class="fore_uv_index">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-thermometer-half" viewBox="0 0 16 16">
+                                <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415"/>
+                                <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1"/>
+                            </svg>UV:
+                        </div>
+
+                        <div class="fore_visibility">
+                            -- km <i class="fa-regular fa-eye"></i>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="three box">
+                <div class="fore_content content">
+                    
+                    <div class="fore_time">
+                        Time: -- --
+                    </div>
+                 
+                    <div class="day_air_speed">
+                        <div class="fore_day">
+                            <i class="fa-solid fa-cloud-bolt"></i>
+                        </div>
+                        
+                        <div class="fore_arrow">
+                            <i class="fa-solid fa-arrow-up" id="a1"></i>
+                        </div>
+
+                        <div class="fore_speed">
+                            -- kmp <i class="fa-solid fa-gauge"></i>
+                        </div>
+
+                    </div>
+                    
+                    <div class="fore_feel_temp">
+                        <div class="will_feel_like">Will feel like: --°C</div>
+                    </div>
+                    
+                    <div class="fore_humid">
+                        Humidity <i class="fa-solid fa-droplet"></i>: 
+                    </div>
+                    
+                    <div class="uv_vis">
+                        
+                        <div class="fore_uv_index">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-thermometer-half" viewBox="0 0 16 16">
+                                <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415"/>
+                                <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1"/>
+                            </svg>UV:
+                        </div>
+
+                        <div class="fore_visibility">
+                            -- km <i class="fa-regular fa-eye"></i>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="four box">
+                <div class="fore_content content">
+                    
+                    <div class="fore_time">
+                        Time: -- --
+                    </div>
+                 
+                    <div class="day_air_speed">
+                        <div class="fore_day">
+                            <i class="fa-solid fa-cloud-bolt"></i>
+                        </div>
+                        
+                        <div class="fore_arrow">
+                            <i class="fa-solid fa-arrow-up" id="a1"></i>
+                        </div>
+
+                        <div class="fore_speed">
+                            -- kmp <i class="fa-solid fa-gauge"></i>
+                        </div>
+
+                    </div>
+                    
+                    <div class="fore_feel_temp">
+                        <div class="will_feel_like">Will feel like: --°C</div>
+                    </div>
+                    
+                    <div class="fore_humid">
+                        Humidity <i class="fa-solid fa-droplet"></i>: 
+                    </div>
+                    
+                    <div class="uv_vis">
+                        
+                        <div class="fore_uv_index">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-thermometer-half" viewBox="0 0 16 16">
+                                <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415"/>
+                                <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1"/>
+                            </svg>UV:
+                        </div>
+
+                        <div class="fore_visibility">
+                            -- km <i class="fa-regular fa-eye"></i>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="day.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
