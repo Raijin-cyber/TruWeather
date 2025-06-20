@@ -6,10 +6,9 @@
 
 ## 🌟 Features
 
-- ✅ **Accurate Weather Forecasts** (up to 10 days)
+- ✅ **Accurate Weather Forecasts** (up to 8 hours)
 - ⚠️ **Real-Time Weather Alerts**
 - 🧊 **Minimal, Glass-Inspired Design**
-- 🌐 **Multi-language Support** (default: English)
 - 📍 **Location-Based Search**
 
 ---
@@ -26,9 +25,9 @@
 
 1. Clone this repo:
 2. 2. Replace your API key in the JavaScript file: app.js
-const apiKey = "YOUR_API_KEY";
+, const apiKey = "YOUR_API_KEY";
 3. Open index.html
-4. In City Panel enter your location in this format "City, Country", then press ENTER or just click anywhere else.
+4. In City Panel, enter your location in this format "City, Country", then press ENTER or just click anywhere else.
 5. Félicitations 🥳🥳
 
 ## 🖼️ Screenshot
@@ -41,7 +40,7 @@ const apiKey = "YOUR_API_KEY";
 
 ## 🐞 If you find any bug, then report it to my Gmail (ujjwalsharma2562005@gmail.com)
 
-THank You!
+Thank you!
 
 
 
